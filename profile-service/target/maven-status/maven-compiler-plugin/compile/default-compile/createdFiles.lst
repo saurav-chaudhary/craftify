@@ -1,0 +1,13 @@
+com/stackroute/model/User.class
+com/stackroute/service/ConsumerService.class
+com/stackroute/model/IngredientDto.class
+com/stackroute/model/StepsDto.class
+com/stackroute/model/InstructionDto.class
+com/stackroute/model/ProjectDto.class
+com/stackroute/controller/ProfileController.class
+com/stackroute/config/RabbitMqConfig.class
+com/stackroute/ProfileService.class
+com/stackroute/repository/ProfileRepository.class
+com/stackroute/repository/ProjectRepository.class
+com/stackroute/model/ReviewDto.class
+com/stackroute/service/USerService.class

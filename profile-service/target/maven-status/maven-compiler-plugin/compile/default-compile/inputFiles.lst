@@ -1,0 +1,13 @@
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/repository/ProfileRepository.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/ProjectDto.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/controller/ProfileController.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/ProfileService.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/repository/ProjectRepository.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/StepsDto.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/ReviewDto.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/config/RabbitMqConfig.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/InstructionDto.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/service/ConsumerService.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/User.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/service/USerService.java
+/home/saurav/project6/craftify/profile-service/src/main/java/com/stackroute/model/IngredientDto.java

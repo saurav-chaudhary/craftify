@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RabbitMqConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">registerService</a> &gt; <a href="index.source.html" class="el_package">com.stackroute.config</a> &gt; <span class="el_source">RabbitMqConfig.java</span></div><h1>RabbitMqConfig.java</h1><pre class="source lang-java linenums">package com.stackroute.config;
+
+import com.stackroute.service.RabbitSender;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
+
+@Configuration
+<span class="nc" id="L19">public class RabbitMqConfig {</span>
+
+    @Value(&quot;${spring.rabbitmq.host}&quot;)
+    private String host;
+
+    @Value(&quot;${spring.rabbitmq.username}&quot;)
+    private String username;
+
+    @Value(&quot;${spring.rabbitmq.password}&quot;)
+    private String password;
+
+    @Value(&quot;${spring.rabbitmq.queue}&quot;)
+    String queueName;
+
+    @Value(&quot;${spring.rabbitmq.exchange}&quot;)
+    String exchange;
+
+    @Value(&quot;${spring.rabbitmq.routingKey}&quot;)
+    private String routingKey;
+
+    @Bean
+    Queue queue() {
+<span class="nc" id="L41">        return new Queue(queueName, true);</span>
+    }
+
+    @Bean
+    DirectExchange exchange() {
+<span class="nc" id="L46">        return new DirectExchange(exchange);</span>
+    }
+
+    @Bean
+    ConnectionFactory connectionFactory(){
+<span class="nc" id="L51">        CachingConnectionFactory cachingConnectionFactory =new CachingConnectionFactory(&quot;localhost&quot;);</span>
+<span class="nc" id="L52">        cachingConnectionFactory.setUsername(&quot;guest&quot;);</span>
+<span class="nc" id="L53">        cachingConnectionFactory.setPassword(&quot;guest&quot;);</span>
+<span class="nc" id="L54">        return cachingConnectionFactory;</span>
+    }
+
+    @Bean
+    Binding binding(Queue queue, DirectExchange exchange) {
+<span class="nc" id="L59">        return BindingBuilder.bind(queue).to(exchange).with(routingKey);</span>
+    }
+
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+
+<span class="nc" id="L65">        return new Jackson2JsonMessageConverter();</span>
+    }
+
+    @Bean
+    public AmqpTemplate rabbitTemplate1(ConnectionFactory connectionFactory) {
+<span class="nc" id="L70">        final RabbitTemplate rabbitTemplate1 = new RabbitTemplate(connectionFactory);</span>
+<span class="nc" id="L71">        rabbitTemplate1.setMessageConverter(jsonMessageConverter());</span>
+<span class="nc" id="L72">        return rabbitTemplate1;</span>
+    }
+
+    @Bean
+    public RabbitSender sender() {
+<span class="nc" id="L77">        return new RabbitSender();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

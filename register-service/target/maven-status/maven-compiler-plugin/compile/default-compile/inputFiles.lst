@@ -1,0 +1,7 @@
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/repository/ResgisterRepository.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/config/RabbitMqConfig.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/model/User.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/service/RegisterService.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/service/RabbitSender.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/RegisterApplication.java
+/home/saurav/project6/craftify/register-service/src/main/java/com/stackroute/controller/RegisterController.java

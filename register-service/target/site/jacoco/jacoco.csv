@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+registerService,com.stackroute.service,RabbitSender,12,0,0,0,3,0,2,0,2,0
+registerService,com.stackroute.service,RegisterService,11,6,0,0,2,3,2,1,2,1
+registerService,com.stackroute.controller,RegisterController,57,0,8,0,14,0,6,0,2,0
+registerService,com.stackroute,RegisterApplication,8,0,0,0,3,0,2,0,2,0
+registerService,com.stackroute.model,User,155,12,30,0,5,1,26,1,11,1
+registerService,com.stackroute.config,RabbitMqConfig,56,0,0,0,13,0,8,0,8,0

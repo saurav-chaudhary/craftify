@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 15672
+    username: guest
+    exchange: project
+    queue: project10
+    routingKey: project

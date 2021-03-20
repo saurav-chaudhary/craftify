@@ -1,0 +1,10 @@
+FROM openjdk:11
+
+ADD ./target/web-content-service-0.0.1-SNAPSHOT.jar /usr/src/web-content-service-0.0.1-SNAPSHOT.jar
+
+WORKDIR usr/src
+
+EXPOSE 8081
+
+ENTRYPOINT ["java","-jar", "web-content-service-0.0.1-SNAPSHOT.jar"]
+
